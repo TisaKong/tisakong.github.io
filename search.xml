@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>最佳日志实践</title>
+      <link href="/2019/08/28/%E6%9C%80%E4%BD%B3%E6%97%A5%E5%BF%97%E5%AE%9E%E8%B7%B5/"/>
+      <url>/2019/08/28/%E6%9C%80%E4%BD%B3%E6%97%A5%E5%BF%97%E5%AE%9E%E8%B7%B5/</url>
+      
+        <content type="html"><![CDATA[<p>这篇博文是网易杭州研究院的员工总结出他们系统的日志输出规范，有较高的参考价值。</p><p>博文链接：<a href="https://zhuanlan.zhihu.com/p/27363484" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27363484</a></p><p>以下为内容提要，更详细的日志规范说明，可以参考博客原文。</p><h2 id="对好日志和坏日志进行定义和区分。"><a href="#对好日志和坏日志进行定义和区分。" class="headerlink" title="对好日志和坏日志进行定义和区分。"></a>对好日志和坏日志进行定义和区分。</h2><p>一句话，好日志能够快速让系统运维人员了解系统运行的状态，能快速定位系统的问题， 能发现系统存在的风险和系统的瓶颈所在。</p><h2 id="日志分类"><a href="#日志分类" class="headerlink" title="日志分类"></a>日志分类</h2><ul><li><strong>诊断日志</strong>： 请求响应，资源消耗，容错，程序异常，后台任务，启动配置参数等；</li><li><strong>统计日志</strong>： 用户访问统计；</li><li><strong>审计日志</strong>： 管理类的操作</li></ul><h2 id="日志内容"><a href="#日志内容" class="headerlink" title="日志内容"></a>日志内容</h2><ul><li><strong>原则</strong>：记录不多不少的信息。能合并为一条日志输出的，就不要输出多条。输出必要的信息，保证能快速定位到问题。</li><li><strong>通常会漏掉的日志</strong>：1）系统的配置参数；2）后台定时任务；3）异常处理逻辑；4）关键参数信息如失败原因等</li></ul><h2 id="日志级别"><a href="#日志级别" class="headerlink" title="日志级别"></a>日志级别</h2><ul><li><strong>FATAL</strong>： 系统级别的错误，系统不可恢复的错误。一个进程生命周期最好只有一个FATAL类型日志。</li><li><strong>ERROR</strong>： 用户级别的错误，请求不能正常完成，需要人工介入处理。</li><li><strong>WARN</strong>： 系统潜在问题，比如资源即将消耗完，网络波动等，能不打warn日志就尽量不要打。</li><li><strong>INFO</strong>： 记录日志正常运行状态， 业务处理成功节点等。</li><li><strong>DEBUG/TRACE</strong>： 精确记录系统执行的每一步。</li></ul><h2 id="对日志的优化"><a href="#对日志的优化" class="headerlink" title="对日志的优化"></a>对日志的优化</h2><ul><li>日志需要持续优化</li><li>定期对系统的日志输出进行Review</li></ul><h2 id="请求的RequestID"><a href="#请求的RequestID" class="headerlink" title="请求的RequestID"></a>请求的RequestID</h2><ul><li>全链路跟踪</li><li>生成策略</li></ul><h2 id="日志级别的动态控制"><a href="#日志级别的动态控制" class="headerlink" title="日志级别的动态控制"></a>日志级别的动态控制</h2><ul><li>可以通过外部输入，控制部分日志的输出级别</li></ul><h2 id="慢日志"><a href="#慢日志" class="headerlink" title="慢日志"></a>慢日志</h2><h2 id="日志监控"><a href="#日志监控" class="headerlink" title="日志监控"></a>日志监控</h2><ul><li>合理设置日志的报警，避免过多导致对报警失去敏感</li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>日志文件分类：根据业务可以选择输出到不同的文件</li><li>日志文件大小：按日或按小时切割</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实践分享 日志 标准化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>困难和机会总是相伴相随</title>
       <link href="/2019/07/09/%E5%9B%B0%E9%9A%BE%E5%92%8C%E5%87%A0%E4%B9%8E%E6%80%BB%E6%98%AF%E7%9B%B8%E4%BC%B4%E7%9B%B8%E9%9A%8F/"/>
       <url>/2019/07/09/%E5%9B%B0%E9%9A%BE%E5%92%8C%E5%87%A0%E4%B9%8E%E6%80%BB%E6%98%AF%E7%9B%B8%E4%BC%B4%E7%9B%B8%E9%9A%8F/</url>
