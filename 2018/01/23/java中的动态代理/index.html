@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next pisces">
+<html class="theme-next mist">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -52,6 +52,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
@@ -60,7 +66,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Slabo 27px:300,300italic,400,400italic,700,700italic|Bitter:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Montserrat:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -89,15 +95,15 @@
 
 
 
-<meta name="description" content="1.介绍这篇文章是关于java动态代理的，它是 java 语言提供给我们主要的代理机制。 简单的说，代理就是使用自己定义的方法，包装原始对象的方法调用，在自己的方法中可以做一些额外的事情。用户直接使用代理对象完成业务请求。 动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以">
+<meta name="description" content="介绍这篇文章是关于java动态代理的，它是 java 语言提供给我们主要的代理机制。 简单的说，代理就是使用自己定义的方法，包装原始对象的方法调用，在自己的方法中可以做一些额外的事情。用户直接使用代理对象完成业务请求。 动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以将所">
 <meta name="keywords" content="java动态代理 设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java 中的动态代理">
 <meta property="og:url" content="http:&#x2F;&#x2F;tisakong.cn&#x2F;2018&#x2F;01&#x2F;23&#x2F;java%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="启发思维">
-<meta property="og:description" content="1.介绍这篇文章是关于java动态代理的，它是 java 语言提供给我们主要的代理机制。 简单的说，代理就是使用自己定义的方法，包装原始对象的方法调用，在自己的方法中可以做一些额外的事情。用户直接使用代理对象完成业务请求。 动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以">
+<meta property="og:description" content="介绍这篇文章是关于java动态代理的，它是 java 语言提供给我们主要的代理机制。 简单的说，代理就是使用自己定义的方法，包装原始对象的方法调用，在自己的方法中可以做一些额外的事情。用户直接使用代理对象完成业务请求。 动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以将所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T06:13:01.332Z">
+<meta property="og:updated_time" content="2019-11-09T08:57:59.776Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -105,7 +111,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
     fancybox: true,
     motion: false,
@@ -355,17 +361,17 @@
       
 
       
-        <h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h2><p>这篇文章是关于<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html" target="_blank" rel="noopener">java动态代理的</a>，它是 java 语言提供给我们主要的代理机制。</p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>这篇文章是关于<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html" target="_blank" rel="noopener">java动态代理的</a>，它是 java 语言提供给我们主要的代理机制。</p>
 <p>简单的说，代理就是使用自己定义的方法，包装原始对象的方法调用，在自己的方法中可以做一些额外的事情。用户直接使用代理对象完成业务请求。</p>
-<p>动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以将所有方法的调用路由到某一个方法 <em>invoke()</em> 中。</p>
+<p>动态代理允许一个具有单个方法的类为任意数量的方法对任意类进行多个方法调用。动态代理可以看做是一个「Facade」模式，但是也可以包装成一个接口的实现。在这两种特性之下， 它可以将所有方法的调用路由到某一个方法 <code>invoke()</code> 中。</p>
 <p>代理并不常用于一些日常的开发任务的。动态代理经常用于框架的编程，或者只有在运行时才能确定具体的类实现的场景中。</p>
 <p>此特性内置于标准的 JDK 中，因此不需要额外的依赖项。</p>
-<h2 id="2-Invocation-Handler"><a href="#2-Invocation-Handler" class="headerlink" title="2.Invocation Handler"></a>2.Invocation Handler</h2><p>首先来构建一个简单的代理，除了打印请求调用的方法之外，实际上什么也不做，并返回一个硬编码的数字。</p>
-<p>首先创建一个实现了 <em>java.lang.reflect.InvocationHandler</em> 接口的的类：</p>
+<h2 id="Invocation-Handler"><a href="#Invocation-Handler" class="headerlink" title="Invocation Handler"></a>Invocation Handler</h2><p>首先来构建一个简单的代理，除了打印请求调用的方法之外，实际上什么也不做，并返回一个硬编码的数字。</p>
+<p>首先创建一个实现了 <code>java.lang.reflect.InvocationHandler</code> 接口的的类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.proxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicInvocationHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger LOGGER = Logger.getLogger(<span class="string">"DynamicInvocationHandler"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> </span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"invoke method &#123;&#125; "</span> + method.getName());</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上面定义了一个简单的代理，日志输出哪个方法被调用了，并且返回1。</p>
-<h2 id="3-创建-proxy-实例"><a href="#3-创建-proxy-实例" class="headerlink" title="3.创建 proxy 实例"></a>3.创建 proxy 实例</h2><p>现在通过类 <em>java.lang.reflect.Proxy</em> 类的工厂方法 <em>newProxyInstance()</em> 创建刚刚定义的 <em>InvocationHandler</em> 类实例。</p>
+<h2 id="创建-proxy-实例"><a href="#创建-proxy-实例" class="headerlink" title="创建 proxy 实例"></a>创建 proxy 实例</h2><p>现在通过类 <code>java.lang.reflect.Proxy</code> 类的工厂方法 <code>newProxyInstance()</code> 创建刚刚定义的 <em>InvocationHandler</em> 类实例。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.proxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map map = (Map) Proxy.newProxyInstance(Main<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>(), </span></span><br><span class="line">                    new Class[]&#123;Map.class&#125;, </span><br><span class="line">                    <span class="keyword">new</span> DynamicInvocationHandler());</span><br><span class="line">        map.put(<span class="string">"some"</span>, <span class="string">"stuff"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>输出结果为：</p>
@@ -373,10 +379,10 @@
 <p>一月 23, 2018 11:53:54 上午 com.proxy.DynamicInvocationHandler invoke</p>
 <p>信息: invoke method {} put</p>
 </blockquote>
-<h2 id="4-通过-lambda-表达式实现-InvocationHandler"><a href="#4-通过-lambda-表达式实现-InvocationHandler" class="headerlink" title="4.通过 lambda 表达式实现 InvocationHandler"></a>4.通过 lambda 表达式实现 InvocationHandler</h2><p>由于 <em>java.lang.reflect.InvocationHandler</em> 是一个函数式接口，可以使用lambda表达式直接定义一个 Invocation Handler 。</p>
+<h2 id="通过-lambda-表达式实现-InvocationHandler"><a href="#通过-lambda-表达式实现-InvocationHandler" class="headerlink" title="通过 lambda 表达式实现 InvocationHandler"></a>通过 lambda 表达式实现 InvocationHandler</h2><p>由于 <code>java.lang.reflect.InvocationHandler</code> 是一个函数式接口，可以使用lambda表达式直接定义一个 Invocation Handler 。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Proxy.newProxyInstance(Main<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>(), </span></span><br><span class="line">	new Class[]&#123;Map.class&#125;, </span><br><span class="line">	(Object proxy, Method method, Object[] args) -&gt; &#123;</span><br><span class="line">		<span class="keyword">if</span> (method.getName().equals(<span class="string">"get"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> UnsupportedOperationException(<span class="string">"Unsupported method: "</span> + method.getName());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在 <em>main2()</em> 方法中，定义了一个 InvocationHandler ,如果 <em>get()</em> 方法被调用，则返回1，否则抛出 <em>UnsupportedOperationException</em> 异常。</p>
+<p>在 <code>main2()</code> 方法中，定义了一个 InvocationHandler ,如果 <code>get()</code> 方法被调用，则返回1，否则抛出 <em>UnsupportedOperationException</em> 异常。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object some = map.get(<span class="string">"some"</span>);</span><br><span class="line">System.out.println(some);</span><br><span class="line">map.put(<span class="string">"some"</span>, <span class="string">"stuff"</span>);</span><br></pre></td></tr></table></figure>
 <p>返回结果：</p>
 <blockquote>
@@ -387,7 +393,7 @@
 <p>at com.proxy.Main.main2(Main.java:29)</p>
 <p>at com.proxy.Main.main(Main.java:12)</p>
 </blockquote>
-<h2 id="5-实际应用场景"><a href="#5-实际应用场景" class="headerlink" title="5.实际应用场景"></a>5.实际应用场景</h2><p>有这样一个应用场景，假设我们想记录下我们的方法的调用耗时，此时我们先定义一个Invocation Handler,来包装我们的真实对象，即：<em>target</em> 对象，通过反射获取到 target 对象的信息。</p>
+<h2 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h2><p>有这样一个应用场景，假设我们想记录下我们的方法的调用耗时，此时我们先定义一个Invocation Handler,来包装我们的真实对象，即：<em>target</em> 对象，通过反射获取到 target 对象的信息。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.proxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimingDynamicInvocationHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = Logger.getLogger(<span class="string">"TimingDynamicInvocationHandler"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, Method&gt; methods = <span class="keyword">new</span> HashMap&lt;String, Method&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TimingDynamicInvocationHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">        <span class="keyword">for</span> (Method method : target.getClass().getDeclaredMethods()) &#123;</span><br><span class="line">            <span class="keyword">this</span>.methods.put(method.getName(), method);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> startTime = System.nanoTime();</span><br><span class="line">        Object result = methods.get(method.getName()).invoke(target, args);</span><br><span class="line">        <span class="keyword">long</span> elapsed = System.nanoTime() - startTime;</span><br><span class="line">        LOGGER.info(<span class="string">"Executing "</span> + method.getName() + <span class="string">"finished in "</span> + elapsed + <span class="string">"ns"</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后,这个代理可以被运用于各种对象类型中：</p>
@@ -613,7 +619,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-介绍"><span class="nav-number">1.</span> <span class="nav-text">1.介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Invocation-Handler"><span class="nav-number">2.</span> <span class="nav-text">2.Invocation Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建-proxy-实例"><span class="nav-number">3.</span> <span class="nav-text">3.创建 proxy 实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-通过-lambda-表达式实现-InvocationHandler"><span class="nav-number">4.</span> <span class="nav-text">4.通过 lambda 表达式实现 InvocationHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-实际应用场景"><span class="nav-number">5.</span> <span class="nav-text">5.实际应用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Invocation-Handler"><span class="nav-number">2.</span> <span class="nav-text">Invocation Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-proxy-实例"><span class="nav-number">3.</span> <span class="nav-text">创建 proxy 实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-lambda-表达式实现-InvocationHandler"><span class="nav-number">4.</span> <span class="nav-text">通过 lambda 表达式实现 InvocationHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际应用场景"><span class="nav-number">5.</span> <span class="nav-text">实际应用场景</span></a></li></ol></div>
             
           </div>
         </section>
@@ -713,13 +719,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
