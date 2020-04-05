@@ -95,15 +95,15 @@
 
 
 
-<meta name="description" content="写在前面大部分程序设计语言在基本语法上面大致都是相通的，根据已掌握的语言对比学习一门新的语言，将是一个高效的学习方式。在学习新语言的时候，只需要重点关注和记忆它特有的语言特性，并在实践中多加运用，然后再深入学习它的组件、框架等内容，想必是可以快速掌握这门新的语言的。 下面是本人在新接触python这门语言的时候，与java的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性">
+<meta name="description" content="写在前面大部分程序设计语言在基本语法上面大致都是相通的，根据已掌握的语言对比学习一门新的语言，将是一个高效的学习方式。在学习新语言的时候，只需要重点关注和记忆它特有的语言特性，并在实践中多加运用，然后再深入学习它的组件、框架等内容，想必是可以快速掌握这门新的语言的。 下面是我在刚接触python这门语言的时候，与Java的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性的">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 与 java 核心语法的对比学习">
+<meta property="og:title" content="python和Java对比学习笔记一">
 <meta property="og:url" content="http:&#x2F;&#x2F;tisakong.cn&#x2F;2017&#x2F;06&#x2F;29&#x2F;python%E4%B8%8Ejava%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="启发思维">
-<meta property="og:description" content="写在前面大部分程序设计语言在基本语法上面大致都是相通的，根据已掌握的语言对比学习一门新的语言，将是一个高效的学习方式。在学习新语言的时候，只需要重点关注和记忆它特有的语言特性，并在实践中多加运用，然后再深入学习它的组件、框架等内容，想必是可以快速掌握这门新的语言的。 下面是本人在新接触python这门语言的时候，与java的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性">
+<meta property="og:description" content="写在前面大部分程序设计语言在基本语法上面大致都是相通的，根据已掌握的语言对比学习一门新的语言，将是一个高效的学习方式。在学习新语言的时候，只需要重点关注和记忆它特有的语言特性，并在实践中多加运用，然后再深入学习它的组件、框架等内容，想必是可以快速掌握这门新的语言的。 下面是我在刚接触python这门语言的时候，与Java的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T06:13:06.362Z">
+<meta property="og:updated_time" content="2020-04-05T09:39:17.389Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
     fancybox: true,
     motion: false,
     duoshuo: {
@@ -122,7 +122,7 @@
   };
 </script>
 
-  <title> python 与 java 核心语法的对比学习 | 启发思维  - 让成长的过程有迹可循 </title>
+  <title> python和Java对比学习笔记一 | 启发思维  - 让成长的过程有迹可循 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +291,7 @@
             
             
               
-                python 与 java 核心语法的对比学习
+                python和Java对比学习笔记一
               
             
           </h1>
@@ -339,7 +339,7 @@
 
           
           
-             <span id="/2017/06/29/python%E4%B8%8Ejava%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="leancloud_visitors" data-flag-title="python 与 java 核心语法的对比学习">
+             <span id="/2017/06/29/python%E4%B8%8Ejava%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="leancloud_visitors" data-flag-title="python和Java对比学习笔记一">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -362,27 +362,27 @@
 
       
         <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>大部分程序设计语言在基本语法上面大致都是相通的，根据已掌握的语言对比学习一门新的语言，将是一个高效的学习方式。在学习新语言的时候，只需要重点关注和记忆它<strong>特有的语言特性</strong>，并在实践中多加运用，然后再深入学习它的<strong>组件、框架</strong>等内容，想必是可以快速掌握这门新的语言的。</p>
-<p>下面是本人在新接触<strong>python</strong>这门语言的时候，与<strong>java</strong>的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性的原理不作深入探索和分析。希望对你有帮助。</p>
+<p>下面是我在刚接触<strong>python</strong>这门语言的时候，与Java的简单对比学习的笔记内容，目标在于总结这两种语言在语法上的不同点，对语法特性的原理不作深入探索和分析。希望对你有帮助。</p>
 <hr>
-<h1 id="数字与字符串"><a href="#数字与字符串" class="headerlink" title="数字与字符串"></a>数字与字符串</h1><h2 id="数值运算"><a href="#数值运算" class="headerlink" title="数值运算"></a><a href="https://docs.python.org/3/tutorial/introduction.html#numbers" target="_blank" rel="noopener">数值运算</a></h2><h3 id="除法运算"><a href="#除法运算" class="headerlink" title="除法运算"></a>除法运算</h3><p>java整数除法运算结果只取<u><em>整数</em></u>部分</p>
+<h1 id="数字与字符串"><a href="#数字与字符串" class="headerlink" title="数字与字符串"></a>数字与字符串</h1><h2 id="数值运算"><a href="#数值运算" class="headerlink" title="数值运算"></a><a href="https://docs.python.org/3/tutorial/introduction.html#numbers" target="_blank" rel="noopener">数值运算</a></h2><h3 id="除法运算"><a href="#除法运算" class="headerlink" title="除法运算"></a>除法运算</h3><p>Java整数除法运算结果只取<u><em>整数</em></u>部分</p>
 <p>python整数除法运算总是返回<u><em>浮点数</em></u>,</p>
 <p>python 使用<code>//</code>运算，对除法运算结果进行取整。</p>
-<h3 id="幂运算"><a href="#幂运算" class="headerlink" title="幂运算"></a>幂运算</h3><p>java的幂运算需要使用<code>java.lang.Math</code>类的<code>pow(double,double)</code>方法</p>
+<h3 id="幂运算"><a href="#幂运算" class="headerlink" title="幂运算"></a>幂运算</h3><p>Java的幂运算需要使用<code>java.lang.Math</code>类的<code>pow(double,double)</code>方法</p>
 <p>python直接使用运算符<code>**</code></p>
-<h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><p>java没有对复数的语法支持，需要自定义复数类</p>
+<h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><p>Java没有对复数的语法支持，需要自定义复数类</p>
 <p>python有对复数的语法支持，如 <code>plu = 3+4j</code></p>
 <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a><a href="https://docs.python.org/3/tutorial/introduction.html#strings" target="_blank" rel="noopener">字符串操作</a></h2><p>java 用<code>&quot;&quot;</code>包含字符串常量，java中的字符串常量实质上是一个不可变的String对象，可以调用String对象的<code>length()</code>方法获取字符串常量的长度。</p>
 <p>python可以用<code>&#39;&#39;</code> 和 <code>&quot;&quot;</code> 包含字符串常量，也可以用 <code>&#39;&#39;&#39;...&#39;&#39;&#39;</code> 和 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code> 包含多行文本。可以像操作字符数组一样操作python字符串，可以使用<u><em>负数索引</em></u>，表示从后往前索引。可以调用<u><em>内置函数</u></em><code>len()</code>获取字符串长度。python字符串还支持<u><em>切片</u></em>操作。</p>
-<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><p>java 的基本条件控制语法为：</p>
+<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><p>Java的基本条件控制语法为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition)&#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(condition2)&#123;</span><br><span class="line">    statements2;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(conditionX)&#123;</span><br><span class="line">    statementsX;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    statementsDefault;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>python 的基本条件控制语法为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition :</span><br><span class="line">    statements</span><br><span class="line"><span class="keyword">elif</span> condition2 :</span><br><span class="line">    statements2</span><br><span class="line"><span class="keyword">elif</span> conditions3 :</span><br><span class="line">    statements3</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    statementsDefault</span><br></pre></td></tr></table></figure>
 
-<p>另外 java 使用 <code>switch..case</code> 语法来控制多条件分支的情况，python 使用 <code>if..elif..elif</code> 处理多条件分支，同样很方便。</p>
+<p>另外Java使用 <code>switch..case</code> 语法来控制多条件分支的情况，python 使用 <code>if..elif..elif</code> 处理多条件分支，同样很方便。</p>
 <h2 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h2><p>java 中的 <code>for</code> 语句有两种形式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//形式一：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;<span class="number">10</span> ; i++) &#123;</span><br><span class="line">    statements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//形式二：</span></span><br><span class="line">String[] s1 = &#123;<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"3"</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(String ss : s1)&#123;</span><br><span class="line">	System.out.print(ss);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>python中 for 语句的语法形式为：<code>for item in iterators</code>，这跟 java 的“形式二”相似。其中有一点需要注意的是：如果 iterators 使用切片，则会对其进行一个浅拷贝,这样item每次就会取浅拷贝的内容进行处理。在循环中如果需要对iterators进行变更的，需要作浅拷贝处理。<br>例如：</p>
+<p>python中 for 语句的语法形式为：<code>for item in iterators</code>，这跟 Java的形式二相似。其中有一点需要注意的是：如果 iterators 使用切片，则会对其进行一个浅拷贝,这样item每次就会取浅拷贝的内容进行处理。在循环中如果需要对iterators进行变更的，需要作浅拷贝处理。<br>例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">words=[<span class="string">'this'</span>,<span class="string">'is'</span>,<span class="string">'python'</span>]</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words[:] :</span><br><span class="line">    <span class="keyword">if</span> len(word)&gt;<span class="number">2</span>:</span><br><span class="line">        words.insert(<span class="number">0</span>,word)</span><br><span class="line">print(words)</span><br></pre></td></tr></table></figure>
 <p>以上代码的输出结果是：[‘python’, ‘this’, ‘this’, ‘is’, ‘python’]<br>现在把代码变成：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">words=[<span class="string">'this'</span>,<span class="string">'is'</span>,<span class="string">'python'</span>]</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words : <span class="comment">#注意这里的区别</span></span><br><span class="line">    <span class="keyword">if</span> len(word)&gt;<span class="number">2</span>:</span><br><span class="line">        words.insert(<span class="number">0</span>,word)</span><br><span class="line">print(words)</span><br></pre></td></tr></table></figure>
@@ -394,10 +394,10 @@
 <p>以上代码执行结果为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2 is a prime number</span><br><span class="line">3 is a prime number</span><br><span class="line">4 equals 2 * 2</span><br><span class="line">5 is a prime number</span><br><span class="line">6 equals 2 * 3</span><br><span class="line">7 is a prime number</span><br><span class="line">8 equals 2 * 4</span><br><span class="line">9 equals 3 * 3</span><br></pre></td></tr></table></figure>
 
-<h1 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h1><p>java 中的函数定义很固定：<code>访问范围</code>+<code>是否静态</code>+<code>是否final</code>+<code>返回类型</code>+<code>函数名</code>+<code>（参数类型 参数名，参数类型2 参数名 ，...）</code>，例如：</p>
+<h1 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h1><p>Java中的函数定义很固定：<code>访问范围</code>+<code>是否静态</code>+<code>是否final</code>+<code>返回类型</code>+<code>函数名</code>+<code>（参数类型 参数名，参数类型2 参数名 ，...）</code>，例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="comment">//statements;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>访问范围</strong>：<code>public</code>，<code>private</code>，<code>protected</code> 和 <code>默认</code>（不指定则表示是默认的作用域，在同一个包内的类能够访问）<br><strong>是否静态</strong>：用<code>static</code>关键字申明，如果是‘static’，表示该方法为<code>类方法</code>，否则为<code>成员方法</code>。<br><strong>是否final</strong>：用<code>final</code>关键字申明，如果是‘final’，则表示该方法不可被继承。<br><strong>返回类型</strong>：返回类型可以是<code>void</code>，java定义9种简单数据类型，java类。</p>
-<p>一般情况下，java 函数的参数都是固定的N(N&gt;=0)个参数，按照 <a href="https://book.douban.com/subject/3360807/" target="_blank" rel="noopener">effective java</a> 的建议，参数的个数最好不要超过4个。<br>当函数的所有参数都是同一个类型的时候，java 支持可变参数的申明形式，如下：</p>
+<p><strong>访问范围</strong>：<code>public</code>，<code>private</code>，<code>protected</code> 和 <code>默认</code>（不指定则表示是默认的作用域，在同一个包内的类能够访问）<br><strong>是否静态</strong>：用<code>static</code>关键字申明，如果是‘static’，表示该方法为<code>类方法</code>，否则为<code>成员方法</code>。<br><strong>是否final</strong>：用<code>final</code>关键字申明，如果是‘final’，则表示该方法不可被继承。<br><strong>返回类型</strong>：返回类型可以是<code>void</code>，Java定义9种简单数据类型，Java类。</p>
+<p>一般情况下，Java函数的参数都是固定的N(N&gt;=0)个参数，按照 <a href="https://book.douban.com/subject/3360807/" target="_blank" rel="noopener">effective java</a> 的建议，参数的个数最好不要超过4个。<br>当函数的所有参数都是同一个类型的时候，Java支持可变参数的申明形式，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String...args)</span></span>&#123;</span><br><span class="line">    <span class="comment">//statements;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>python 中定义函数的语法形式为：<code>def</code>+<code>函数名</code>+<code>(参数,参数,...,参数=缺省值)</code>，例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ask_ok</span><span class="params">(prompt, retries=<span class="number">4</span>, reminder=<span class="string">'Please try again!'</span>)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        ok = input(prompt)</span><br><span class="line">        <span class="keyword">if</span> ok <span class="keyword">in</span> (<span class="string">'y'</span>, <span class="string">'ye'</span>, <span class="string">'yes'</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> ok <span class="keyword">in</span> (<span class="string">'n'</span>, <span class="string">'no'</span>, <span class="string">'nop'</span>, <span class="string">'nope'</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        retries = retries - <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> retries &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'invalid user response'</span>)</span><br><span class="line">        print(reminder)</span><br></pre></td></tr></table></figure>
@@ -445,16 +445,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/30/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8git/" class="post-nav-title-link" rel="prev" title="学习使用Git <上篇>">
-                <i class="fa fa-chevron-left"></i> 学习使用Git <上篇> 
+              <a href="/2017/10/30/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8git/" class="post-nav-title-link" rel="prev" title="学习使用Git">
+                <i class="fa fa-chevron-left"></i> 学习使用Git 
               </a>
             
           </div>
 		  
 		  <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/06/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E3%80%81%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E3%80%81%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%E5%9C%A8%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E6%9E%84%E9%80%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="post-nav-title-link" rel="next" title="单例模式、模板方法模式、建造者模式在接口请求参数构造中的应用">
-                单例模式、模板方法模式、建造者模式在接口请求参数构造中的应用  <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%A7%88%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="post-nav-title-link" rel="next" title="单例模式的几种类型">
+                单例模式的几种类型  <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

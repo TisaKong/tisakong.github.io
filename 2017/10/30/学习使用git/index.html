@@ -98,12 +98,12 @@
 <meta name="description" content="前言目前很多传统的互联网公司还是使用 SVN 作为常用的版本控制工具(CVS)，SVN 属于集中式版本控制系统，团队协作开发中的每个成员都是共享网络服务器上存储的同一份项目代码，任何代码的更新和提交操作都需要在有网络的前提下进行。git 属于分布式版本控制系统 ，它把远程代码仓库完整的镜像拷贝到本地，这样使得每一个开发者的本地也有一个与远程服务器上相同的仓库。这样任何一处协同工作用的服务器发生故障">
 <meta name="keywords" content="git 版本控制 工具 读书 笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习使用Git &lt;上篇&gt;">
+<meta property="og:title" content="学习使用Git">
 <meta property="og:url" content="http:&#x2F;&#x2F;tisakong.cn&#x2F;2017&#x2F;10&#x2F;30&#x2F;%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8git&#x2F;index.html">
 <meta property="og:site_name" content="启发思维">
 <meta property="og:description" content="前言目前很多传统的互联网公司还是使用 SVN 作为常用的版本控制工具(CVS)，SVN 属于集中式版本控制系统，团队协作开发中的每个成员都是共享网络服务器上存储的同一份项目代码，任何代码的更新和提交操作都需要在有网络的前提下进行。git 属于分布式版本控制系统 ，它把远程代码仓库完整的镜像拷贝到本地，这样使得每一个开发者的本地也有一个与远程服务器上相同的仓库。这样任何一处协同工作用的服务器发生故障">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T06:12:56.251Z">
+<meta property="og:updated_time" content="2020-04-05T09:42:36.016Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
     fancybox: true,
     motion: false,
     duoshuo: {
@@ -122,7 +122,7 @@
   };
 </script>
 
-  <title> 学习使用Git <上篇> | 启发思维  - 让成长的过程有迹可循 </title>
+  <title> 学习使用Git | 启发思维  - 让成长的过程有迹可循 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +291,7 @@
             
             
               
-                学习使用Git <上篇>
+                学习使用Git
               
             
           </h1>
@@ -339,7 +339,7 @@
 
           
           
-             <span id="/2017/10/30/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8git/" class="leancloud_visitors" data-flag-title="学习使用Git <上篇>">
+             <span id="/2017/10/30/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8git/" class="leancloud_visitors" data-flag-title="学习使用Git">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -363,7 +363,7 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>目前很多传统的互联网公司还是使用 <code>SVN</code> 作为常用的版本控制工具(CVS)，<code>SVN</code> 属于<u><strong>集中式版本控制系统</strong></u>，团队协作开发中的每个成员都是共享网络服务器上存储的同一份项目代码，任何代码的更新和提交操作都需要在有网络的前提下进行。<br><code>git</code> 属于<u><strong>分布式版本控制系统</strong></u> ，它把远程代码仓库完整的镜像拷贝到本地，这样使得每一个开发者的本地也有一个与远程服务器上相同的仓库。这样任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。</p>
 <hr>
-<h1 id="使用git前的配置"><a href="#使用git前的配置" class="headerlink" title="使用git前的配置"></a>使用git前的配置</h1><h2 id="git-config工具"><a href="#git-config工具" class="headerlink" title="git config工具"></a><strong>git config</strong>工具</h2><p>使用：git config  [选项] [参数]<br>说明：[选项]有三种模式：<br>            <code>--system</code> ：对系统中所有用户适用的配置，操作的是<u>/etc/gitconfig</u>文件(linux系统下) 或者 <u>Git安装目录/gitconfig</u>文件。<br>            <code>--global</code> ：只适用当前用户的配置，操作的是<u>用户目录/.gitconfig</u>文件。<br>            <code>不带参数</code> ：当前项目的Git目录中的配置文件，<u>.git/config</u>文件。<br>      [参数] 可以通过 <code>git config --list</code> 查看所有已配置的参数信息，会输出类似下面的信息：</p>
+<h1 id="使用git前的配置"><a href="#使用git前的配置" class="headerlink" title="使用git前的配置"></a>使用git前的配置</h1><h2 id="git-config-工具"><a href="#git-config-工具" class="headerlink" title="git config 工具"></a>git config 工具</h2><p>使用：git config  [选项] [参数]<br>说明：[选项]有三种模式：<br>            <code>--system</code> ：对系统中所有用户适用的配置，操作的是<u>/etc/gitconfig</u>文件(linux系统下) 或者 <u>Git安装目录/gitconfig</u>文件。<br>            <code>--global</code> ：只适用当前用户的配置，操作的是<u>用户目录/.gitconfig</u>文件。<br>            <code>不带参数</code> ：当前项目的Git目录中的配置文件，<u>.git/config</u>文件。<br>      [参数] 可以通过 <code>git config --list</code> 查看所有已配置的参数信息，会输出类似下面的信息：</p>
 <blockquote>
 <p>user.name=tisakong<br>user.email=tisakong@163.com<br>help.format=html<br>color.diff=auto<br>core.symlinks=false<br>…</p>
 </blockquote>
@@ -512,8 +512,8 @@
 		  
 		  <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/29/python%E4%B8%8Ejava%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="post-nav-title-link" rel="next" title="python 与 java 核心语法的对比学习">
-                python 与 java 核心语法的对比学习  <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/29/python%E4%B8%8Ejava%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" class="post-nav-title-link" rel="next" title="python和Java对比学习笔记一">
+                python和Java对比学习笔记一  <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -668,7 +668,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用git前的配置"><span class="nav-number">2.</span> <span class="nav-text">使用git前的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config工具"><span class="nav-number">2.1.</span> <span class="nav-text">git config工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户信息（用户名、email）"><span class="nav-number">2.2.</span> <span class="nav-text">配置用户信息（用户名、email）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文本编辑器-和-差异分析工具"><span class="nav-number">2.3.</span> <span class="nav-text">配置文本编辑器 和 差异分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-help"><span class="nav-number">2.4.</span> <span class="nav-text">git help</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-基本操作"><span class="nav-number">3.</span> <span class="nav-text">git 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-git-仓库"><span class="nav-number">3.1.</span> <span class="nav-text">获取 git 仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git管理文件的几种状态及操作"><span class="nav-number">3.2.</span> <span class="nav-text">Git管理文件的几种状态及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-git-status-命令查看目录下文件的状态。"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用 git status 命令查看目录下文件的状态。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#被忽略的文件"><span class="nav-number">3.2.2.</span> <span class="nav-text">被忽略的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交更新"><span class="nav-number">3.2.3.</span> <span class="nav-text">提交更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">3.2.4.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动文件"><span class="nav-number">3.2.5.</span> <span class="nav-text">移动文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看提交历史"><span class="nav-number">3.3.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">3.4.</span> <span class="nav-text">撤销操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库的使用"><span class="nav-number">4.</span> <span class="nav-text">远程仓库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前远程库"><span class="nav-number">4.1.</span> <span class="nav-text">查看当前远程库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用git前的配置"><span class="nav-number">2.</span> <span class="nav-text">使用git前的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config-工具"><span class="nav-number">2.1.</span> <span class="nav-text">git config 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户信息（用户名、email）"><span class="nav-number">2.2.</span> <span class="nav-text">配置用户信息（用户名、email）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文本编辑器-和-差异分析工具"><span class="nav-number">2.3.</span> <span class="nav-text">配置文本编辑器 和 差异分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-help"><span class="nav-number">2.4.</span> <span class="nav-text">git help</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-基本操作"><span class="nav-number">3.</span> <span class="nav-text">git 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-git-仓库"><span class="nav-number">3.1.</span> <span class="nav-text">获取 git 仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git管理文件的几种状态及操作"><span class="nav-number">3.2.</span> <span class="nav-text">Git管理文件的几种状态及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-git-status-命令查看目录下文件的状态。"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用 git status 命令查看目录下文件的状态。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#被忽略的文件"><span class="nav-number">3.2.2.</span> <span class="nav-text">被忽略的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交更新"><span class="nav-number">3.2.3.</span> <span class="nav-text">提交更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">3.2.4.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动文件"><span class="nav-number">3.2.5.</span> <span class="nav-text">移动文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看提交历史"><span class="nav-number">3.3.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">3.4.</span> <span class="nav-text">撤销操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库的使用"><span class="nav-number">4.</span> <span class="nav-text">远程仓库的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前远程库"><span class="nav-number">4.1.</span> <span class="nav-text">查看当前远程库</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
